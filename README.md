@@ -9,11 +9,14 @@ Nextflow pipeline for the analysis of Hantavirus (and related) genomes generated
 
 <!-- TODO : Fill in short bullet-pointed list of the default steps in the pipeline -->
 
-1. Read QC and trimming ([`FastP`](https://github.com/OpenGene/fastp))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
-3. Genome assembly ([`Spades`](https://github.com/ablab/spades))
-4. Sort amplicons 
-5. Rearrange amplicons
+1. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+2. Sort amplicons and rearrange amplicons (if needed)
+3. Generate consensus from reads using viral consensus (https://github.com/niemasd/ViralConsensus)
+4. Quasispecies analysis from consensus
+5. Quasispecies analysis from assembled genomes
+6. Generate reports!
+
+
 
 
 ## Quick Start

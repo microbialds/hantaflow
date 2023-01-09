@@ -6,7 +6,7 @@ nextflow.enable.dsl=2
 process run_spades {
     container "quay.io/biocontainers/spades:3.15.5--h95f258a_1"
 
-    publishDir "${params.out}/assembly/", mode: "copy"
+    publishDir "${params.outdir}/assembly/", mode: "copy"
 
     input:
         tuple val(sampleID), path(trimmed)
@@ -22,6 +22,7 @@ process run_spades {
       -1 ${trimmed[0]} \
       -2 ${trimmed[1]} \
       -o ${sampleID}_out \
-      --meta 
+      --meta
+      mv ./${sampleID}_out/contigs.fasta ${sampleID}_contigs.fasta
     """
 }
