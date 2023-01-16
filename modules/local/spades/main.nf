@@ -12,7 +12,7 @@ process run_spades {
         tuple val(sampleID), path(trimmed)
 
     output:
-        path("${sampleID}_contigs.fasta"), emit: assembled
+        tuple val(sampleID), path("${sampleID}_contigs.fasta"), emit: assembled
 
     script:
 

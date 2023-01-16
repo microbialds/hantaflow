@@ -3,8 +3,6 @@ Nextflow pipeline for the analysis of Hantavirus (and related) genomes generated
 
 ## Introduction
 
-<!-- TODO nf-core: Add full-sized test dataset and amend the paragraph below if applicable -->
-
 ## Pipeline summary
 
 The goal of this pipeline is to process amplicon generated hantavirus genomes. Although the pipeline is designed for the requirements of these hantavirus genomes, the construction should be modular enough that in the near future could be expanded to other genomes generated with similar approaches.
@@ -20,9 +18,6 @@ Steps of the pipeline include:
    
    To evaluate quasispecies in this dataset, we can use the genomes generated in the denovo analysis, and also a set of reference genomes for the segments.
 
-   
-
-<!-- TODO : Fill in short bullet-pointed list of the default steps in the pipeline -->
 
 ## TODO
 1. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))

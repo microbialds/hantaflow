@@ -26,6 +26,7 @@ def helpMessage() {
 // Import modules to process data
 include { run_fastp } from './modules/local/fastp/main'
 include { run_spades } from './modules/local/spades/main'
+include { run_blastn } from './modules/local/amplicon-sorting/main'
 
 if (params.help) {
     helpMessage()
@@ -41,4 +42,5 @@ sample_ch = Channel.fromPath(params.input) \
 workflow {
     run_fastp(sample_ch)
     run_spades(run_fastp.out.trimmed)
+    run_blastn(run_spades.out.assembled)
 }
